@@ -1,13 +1,14 @@
-compile = ["make", "-s"]
+compile = "make -s"
+
 run = "./main"
 entrypoint = "main.cpp"
 hidden = ["main", "**/*.o", "**/*.d", ".ccls-cache", "Makefile"]
 
-[languages.cpp]
-pattern = "**/*.{cpp,h}"
+[nix]
+channel = "stable-24_05"
 
-[languages.cpp.languageServer]
-start = "ccls"
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", ".ccls-cache"]
 
 [debugger]
 support = true
@@ -58,6 +59,14 @@ setupCommands = [
 ]
 stopAtEntry = false
 type = "cppdbg"
+
+[languages]
+
+[languages.cpp]
+pattern = "**/*.{cpp,h}"
+
+[languages.cpp.languageServer]
+start = "ccls"
 
 [agent]
 expertMode = true
