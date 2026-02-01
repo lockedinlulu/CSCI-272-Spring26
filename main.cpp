@@ -1,89 +1,252 @@
 #include <iostream>
-#include <cstdlib>
-#include <string>
-#include <ctime>
+#include <iomanip>
+#include <limits>
 #include <cmath>
-#include "doors.h"     
-#include "rollDice.h"  
-#include "Progress.h"
+#include "printline"
 using namespace std;
 
+/*void addFunc( int a , int b){
+    cout << a + b << endl;
+}
+void subtractFunc( int a , int b){
+    cout << a - b << endl;
+    
+    }*/
 
-int main() { int nextDoorNumber, Red, Blue, penalty{0};      //Storage Variables
-        srand(time(0));
-                                                          
-                                                             //Introduction to the game begins
+int main() { 
 
-cout << "As you press forward into the overgrown courtyard, a familiar but harrowing voice reaches out. It cuts through the silence like steel: Hello...Player." << endl;
-        cout << endl;
+/*cout << "Welcome! Please input your account number: ";
+  int acc{0}, pin{0};
+  int accnumdb{123456789}, pinnumdb{1122};
+  cin >> acc;
+  cout << "Great, now please input your pin number: ";
+  cin >> pin;
 
-cout << "You must be confused as to what brings you here to this dark, grim and ghastly place. Soon you will know your ultimate fate." << endl;
-        cout << endl;
+if (accnumdb == 123456789){
+if (pinnumdb == 1122){
+cout << "Login successful!\n";
+  cout << "\n==============Account Details=================\n";
+  cout << "1. Balance\n";
+  cout << "2. Inquiry\n";
+  cout << "3. Withdraw\n";
+  cout << "4. Deposit\n";
+  cout << "5. Exit\n";
 
-cout << "Allow me to reintroduce myself. I am King Nevermore, son of the late king Vergil. You must be familiar with me, as I was once your ruler...before you decided to abandon us and pursue witchcraft. The noble houses talked of heresy and treason you know? I saw your tenacity in the court and granted mercy upon you instead. Be thankful." << endl;
-        cout << endl;
+  char choice {0};
 
-cout << "It was rough getting here I know. It's all coming back to you now though, is it?  The arrests, the royal court proceedings, the guilty verdict? I hope so for your sake, for your path will be difficult, if not impossible." << endl;
-        cout << endl;
+  cout << "Please select a menu option. ('B' for balance, 'W' for withdraw, 'I' for inquiry, 'D' for deposit, 'E' for exit: ";
 
-cout << "By now I'm sure you remember that you've chosen a fate worse than death? Reaching the yellow door at the center of the Grazi Maze, which is where you are right now. A deed that stays unclaimed by no one." << endl;
-        cout << endl;
-        
-cout << "Alas, You made your choice and you have wasted enough of my time though, 'he scoffs.' I will tell you what you need to know, then go to your fate." << endl;
-        cout << endl;
+  cin >> choice;
 
-cout << "Listen Carefully: You must pick between a red door and blue door to advance, and there is a certain order the doors must be entered to reach the yellow door. When you pick the wrong door, a ghoul behind the wrong door will push you back." << endl;
-        cout << endl;
+  switch(choice) {
+    case 'B' : case 'b': cout << "Your balance is $1,209,504.89\n";
+    break;
 
-cout << "How many doors will you get pushed back? That depends on what number you get when you roll the dice. So when you get pushed back, which I am certain will happen, you must remember the order of the doors to advance once more and catch up!" << endl;
-        cout << endl;
+    case 'W' : case 'w': cout << "You withdrew $250,049.21\n";
+    break;
 
-cout << "And oh, I almost forgot. You'll be racing against three other people, who are also trying to reach the yellow door. I have posted a map of the first ten doors so you may have a chance at victory. So good luck hero... You'll need it." << endl;
-        cout << endl;
+    case 'I' : case 'i': cout << "Call us on (123) 456-798\n";
+    break;
 
-        cout << "Now, let's begin. Red, or Blue?\n";
-                                                
-                                                   //Game Begins
-            
-                                                   //Doors 1-10... the demo doors.
-        for (int door = 1; door <= 10; door++)
-            {
-                cin >> Red >> Blue;
-                if (getCorrectDoor(door) == 1)
-                {
-                    cout << "Grace Period: No Penalty, move forward.\n";
-                }
-                else
-                {
-                    cout << "Grace Period: No Penalty, move forward.\n";
-                }
-            
-                if (door == 10)
-                {
-                    cout << "Now it gets serious! Wrong choice equals dice penalty!\n";
-                }
-          for (int door = 11; door <= 25; door++)
-                 cin >> Red >> Blue;
-                if (getCorrectDoor(door) == 1)
-                    cout << "Door #" << door << "->"
-                    //<< (correct == 1 ? "Red" : "Blue")
-                     << endl;
-            
+    case 'D' : case 'd': cout << "Your deposit amount is $586,589.03\n";
+    break;
 
-            return 0;
+    case 'E' : case 'e': cout << "Goodbye, enjoy your day!\n";
+    break;
 
-                                    //Prompts for the game
-            
-        cout << "Now it gets serious! Wrong choice = dice penalty!\n";
-        cout << "You're halfway there!\n";          //13th door
-        cout << "Correct! Move ahead.\n";           //Right Choice
-        cout << "Wrong! You must roll the dice!\n"; //Wrong Choice
-        cout << "Grace period: no penalty, move forward.\n"; //Grace Period for doors 1-10
-        cout << "\nCONGRATULATIONS!\n"; //Winning the game
-        cout << "You reached the Yellow Door and won your freedom!\n"; //Winning the game
-        
+    default: cout << "Invalid selection. Try again.\n";
+  }
+
+}
+}
+  else{
+cout << "\nInvalid account or PIN number.\n";
+  }
+
+  
+
+  
+  
+ /*cout << "\n Compound Assignment\n";
+
+  int x{5};
+
+  cout << "old value of x: " << x << endl;
+  x += 4;
+  cout << "new value of x after +=: " << x << endl;
+
+  x -= 5;
+  cout << "new value of x after -=: " << x << endl;
+
+  x *= 2;
+  cout << "mew value of x after *=: " << x << endl;
+
+  x /= 3;
+  cout << "new value of x after /=: " << x << endl;
+
+  x %= 2;
+  cout << "new value of x after %=: " << x << endl;*/
+
+    
+
+/*int counter{1}, stopnum{0};
+
+  cout << "Please enter the stop number: ";
+  cin >> stopnum;
+  
+  while (counter <= stopnum){
+    cout << counter << endl;
+    ++counter;
+  }*/
+
+  /*cout << "Welcome! Please input your account number: ";
+      int acc{0}, pin{0};
+      int accnumdb{123456789}, pinnumdb{1122};
+      cin >> acc;
+
+      cout << "Great, now please input your pin number: ";
+      cin >> pin;*/
+
+      // Check if account and pin match
+      /*if (acc == accnumdb && pin == pinnumdb) {
+          cout << "Login successful!\n";
+
+          char choice {' '};*/ // initialize with space so it's not 'E' at start
+
+          // Loop until user chooses to exit
+          /*while (choice != 'E' && choice != 'e') {
+
+              cout << "\n============== Account Details ================\n";
+              cout << "1. Balance\n";
+              cout << "2. Inquiry\n";
+              cout << "3. Withdraw\n";
+              cout << "4. Deposit\n";
+              cout << "5. Exit\n";
+
+              cout << "Please select a menu option "
+                   << "('B' for balance, 'W' for withdraw, "
+                   << "'I' for inquiry, 'D' for deposit, 'E' for exit): ";
+
+              cin >> choice;
+
+              if (choice == 'B' || choice == 'b') {
+                  cout << "Your balance is $1,209,504.89\n";
+              }
+              else if (choice == 'W' || choice == 'w') {
+                  cout << "You withdrew $250,049.21\n";
+              }
+              else if (choice == 'I' || choice == 'i') {
+                  cout << "Call us on (123) 456-798\n";
+              }
+              else if (choice == 'D' || choice == 'd') {
+                  cout << "Your deposit amount is $586,589.03\n";
+              }
+              else if (choice == 'E' || choice == 'e') {
+                  cout << "Goodbye, enjoy your day!\n";
+              }
+              else {
+                  cout << "Invalid selection. Try again.\n";
+              }
+          }
+
+      } else {
+          cout << "\nInvalid account or PIN number.\n";
+      }
+
+      return 0;*/
+
+// functions are a way to split your code into different pieces
+
+    /*float x{5.7}, y{5.2};
+    
+    cout << "Ceiling of " << x << " = " << ceil(x) << endl;
+    cout << "Ceiling of " << y << " = " << ceil(y) << endl;
+
+    cout << "Floor of " << x << " = " << floor(x) << endl;
+    cout << "Floor of " << y << " = " << floor(y) << endl;
+
+    cout << "2 to the power of 3 = " << pow(2, 3) << endl;
+
+    srand(time(0));
+
+    cout << "\n10 random numbers between 3 and 7: ";
+    for(int i{1}; i <= 10; ++i){
+        cout << 3 + rand( ) % 5 << " ";
+    }
+    cout << endl;*/
 
 
-        
-        
-}}
+    // factorial is product of all numbers till the num
+//for (intitalization;condition;increment/decrement)
+    // start @ 1, goes up until num, ++ so the loop becomes false.
+    //i is a counter, keeps track of how many loops happened
+
+   /*cout << "enter the first number: ";
+    int num1{0};
+    cin >> num1;
+    cout << "great now enter the last number: ";
+        int num2{0}, prod{1};
+    cin >> num2;
+
+    for(int i{num1 + 1}; i < num2; ++i){
+        if(i % 2 == 0){
+            cout << i << " " << endl;
+        prod *= i;
+        }
+    }
+    
+cout << "The product of even numbers between " << num1 << " and " << num2 << " is " << prod;*/
+
+    //outer loops controls the rows
+    //inner loop controls how many stars per row 
+    
+    /*int skip{0};
+    for(int i = 1; i <= 10; i++){
+        if( i == 5){
+
+            skip = i;
+            continue;
+
+        }
+
+    cout << i << " " << endl;
+
+    }*/
+
+
+cout << rand() << endl;
+
+    cout << rand() % 16 << endl; // 16 is the scaling value
+
+    for(int i{1}; i <=10; ++i){
+    cout << 1 +rand() % 16 << endl; //1 is a shift value
+    }
+
+    //rand() generates random numbers between 0 and randmax, but if we wanted to start from 3
+    //5 + rand()
+
+    cout << ceil(10.5) << endl; //gives you next integer higher than 10.5
+    cout << floor(5.6) << endl; //gives you next integer lower than 5.6
+
+    cout << "John Thomas\n";
+    print_divider_line();
+    
+    cout << "25\n";
+    print_divider_line();
+    
+    cout << "jthomas@amazon.com\n";
+    print_divider_line();
+
+    
+
+
+    
+    
+
+
+
+
+
+
+    
+        }

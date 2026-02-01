@@ -3,7 +3,6 @@ compile = "make -s"
 run = "./main"
 entrypoint = "main.cpp"
 hidden = ["main", "**/*.o", "**/*.d", ".ccls-cache", "Makefile"]
-modules = ["nodejs-20"]
 
 [nix]
 channel = "stable-24_05"
@@ -84,10 +83,6 @@ author = "agent"
 task = "workflow.run"
 args = "C++ Program"
 
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Grazi Maze"
-
 [[workflows.workflow]]
 name = "C++ Program"
 author = "agent"
@@ -97,20 +92,4 @@ outputType = "console"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "g++ main.cpp doors.cpp rollDice.cpp -o main && ./main"
-
-[[workflows.workflow]]
-name = "Grazi Maze"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "node server.js"
-waitForPort = 5000
-
-[workflows.workflow.metadata]
-outputType = "webview"
-
-[[ports]]
-localPort = 5000
-externalPort = 80
+args = "g++ main.cpp -o main && ./main"
