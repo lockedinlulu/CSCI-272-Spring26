@@ -16,22 +16,21 @@ class Car{
         
     public:
     Car(){
-        //default constructor
+     
     }
     ~Car(){
         cout << "Object is destroyed" << endl;
     }
-    Car(string b, string m, int y){ //paramtereid constructor
-        brand = b; //not b = brand b is the value itself
+    Car(string b, string m, int y){ 
+        brand = b; 
         model = m;
         year = y;
     }
-    Car(const Car &other){ // copy constructor
+    Car(const Car &other){ 
         
         brand = other.brand;
         model = other.model;
-        year = other.year;
-        
+        year = other.year;      
     } 
         void startEngine(){
             cout << "start engine" << endl;
@@ -64,3 +63,20 @@ int main(){
     
     car[19].startEngine();
 }
+
+ /* Reflection:
+What I understood: I understood how I can use a deconstructor, just like a constructor but the opposite, to get rid of my data after it has been compiled. I also 
+learned that I can use arrays if I am using several (for example) cars in one class. I also learned that I can override the blueprint in the main, as well as use 
+pointers to point to a specific car.
+
+Difficulties: I was really confused in regards to the pointer, I didn't really understand why we needed it at first till  I realized it won't be affected by the decontructor,
+and it can also simply just point to the function instead of us constantly calling it.
+
+Research: I went on google and searced up pointer diagrams to freshen up my memory of pointers because it was honestly very confusing for me, and I alsos earched up
+arrays and a diagram that shows the difference between constructors and deconstructors in terms of code structure.
+    
+AI Usage: I did not use AI for this portion of the code.
+
+What I learned: I learned how I can destroy my code after it has been complied and how I can use in that in the real world (for example, with confidential information), and I
+also learned that I can use pointers to "call" or basically point to my functions instead of constantly actually calling them.
+*/
