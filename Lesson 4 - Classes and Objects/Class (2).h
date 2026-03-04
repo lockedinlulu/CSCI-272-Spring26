@@ -24,6 +24,15 @@ class Car{
         cout << "Car is acclerating" << endl;
     }
 };
+
+#include "Class.h"
+
+int main(){
+    Car car1;
+    car1.startEngine();
+    car1.accelerate();
+}
+
 /* Reflection:
 What I understood: I understood how to make a very basic class using a car as a example. Since a class is a blueprint, we use things that ever single car has, so that
 includes brand, year, and model. I also understand how we can make the classes form specific things using functions.
